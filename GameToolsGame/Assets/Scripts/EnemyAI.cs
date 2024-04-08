@@ -55,5 +55,10 @@ public class EnemyAI : MonoBehaviour
             agent.SetDestination(wanderPos3DPlane);
             timer = 0;
         }
+
+        if (Vector3.Distance(transform.position, player.position) < distanceToHunt)
+        {
+            currentState = State.HuntForPlayer;
+        }
     }
 }
