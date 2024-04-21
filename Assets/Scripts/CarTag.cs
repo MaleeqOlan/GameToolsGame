@@ -11,5 +11,5 @@ public class CarTag : MonoBehaviour
             Debug.Log("CarTag: Player collided with car");
         }
     }
-    }
+    
 }

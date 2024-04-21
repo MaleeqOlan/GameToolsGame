@@ -29,7 +29,7 @@ public class TriggerExit : MonoBehaviour
     IEnumerator WaitAndDeactivate()
     {
         yield return new WaitForSeconds(delay);
-        
+
         transform.root.gameObject.SetActive(false);
 
     }
