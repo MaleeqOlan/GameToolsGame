@@ -23,25 +23,25 @@ public class CurveChanger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag ("Curve"))
+        if (other.gameObject.CompareTag("Curve"))
         {
-            if (isComplete) 
+            if (isComplete)
             {
                 StartCoroutine(changeCurveStrength());
             }
-            
+
         }
     }
 
-    public IEnumerator changeCurveStrength() 
+    public IEnumerator changeCurveStrength()
     {
         float elapsedTime = 0;
-        targetValue = Random.Range(-0.005f, 0.005f);
+        targetValue = Random.Range(-0.002f, 0.002f);
 
         while (elapsedTime < lerpTime)
         {
             isComplete = false;
-            
+
             currentValue = Mathf.Lerp(currentValue, targetValue, (elapsedTime / lerpTime));
             elapsedTime += Time.deltaTime;
 
