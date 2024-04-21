@@ -82,7 +82,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -96,7 +96,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2853347385743174987}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 2073d0935601eae4eb061675b6c4b0bd, type: 2}
   m_CullingMode: 0
@@ -121,9 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e873e57d76ef1e4f8bafd65f32bf604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedBoost: 10
-  duration: 2
-  carController: {fileID: 0}
+  boostDuration: 10
+  boostMultiplier: 2
 --- !u!1 &8519120442995253015
 GameObject:
   m_ObjectHideFlags: 0
