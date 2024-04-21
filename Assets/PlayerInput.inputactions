@@ -7,21 +7,21 @@
             "actions": [
                 {
                     "name": "MoveLeft",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "5fe0c761-1213-445b-8938-617aeaf94dbb",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 },
                 {
                     "name": "MoveRight",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "74b71452-d336-4500-b503-895ba429449b",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
