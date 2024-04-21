@@ -8,6 +8,7 @@ TagManager:
   - Destroy
   - Curve
   - Lethal
+  - SpeedBoost
   layers:
   - Default
   - TransparentFX
