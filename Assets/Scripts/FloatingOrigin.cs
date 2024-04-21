@@ -1,22 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.SceneManagement;
-
-// This script is attached to the camera
-[RequireComponent(typeof(Camera))]
+using UnityEngine;
 
 public class FloatingOrigin : MonoBehaviour
 {
     public float threshold = 100.0f;
+    public float transitionSpeed = 5.0f; // Adjust this value to control the speed of the transition
     public LevelLayoutGenerator levelLayoutGenerator;
 
-    // This corrects the position of all objects in the scene
+    private Vector3 targetPosition;
+
     void LateUpdate()
     {
         Vector3 cameraPosition = gameObject.transform.position;
         cameraPosition.y = 0f;
-
 
         if (cameraPosition.magnitude > threshold)
         {
@@ -30,7 +26,13 @@ public class FloatingOrigin : MonoBehaviour
 
             Vector3 originDelta = Vector3.zero - cameraPosition;
             levelLayoutGenerator.UpdateSpawnOrigin(originDelta);
-            Debug.Log("recentering, origin delta = " + originDelta);
+            Debug.Log("Recentering, origin delta = " + originDelta);
+
+            // Set the target position for the camera
+            targetPosition = gameObject.transform.position + originDelta;
         }
+
+        // Smoothly move the camera towards the target position
+        gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, targetPosition, transitionSpeed * Time.deltaTime);
     }
 }
